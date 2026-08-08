@@ -2,12 +2,14 @@ import {
   printComments,
   printLeadingComments,
 } from "../../main/comments/print.js";
+import { locEndWithFullText } from "../location/index.js";
 import {
   isSingleHtmlEventHandlerExpressionStatement,
   isSingleJsxExpressionStatementInMarkdown,
   isSingleVueEventBindingExpressionStatement,
   shouldExpressionStatementPrintLeadingSemicolon,
 } from "../semicolon/semicolon.js";
+import { isBlockComment } from "../utilities/comment-types.js";
 import { CommentCheckFlags, getComments } from "../utilities/comments.js";
 import { shouldExpressionStatementPrintOwnComments } from "../utilities/should-expression-statement-print-own-comments.js";
 import {
@@ -68,6 +70,32 @@ function printExpressionStatement(path, options, print) {
 
     parts.unshift(";");
   } else if (shouldPrintSemicolon(path, options)) {
+    const { node } = path;
+    const statementEnd = locEndWithFullText(node) - 1;
+
+    // Print block comments that were located between the expression and the
+    // terminating `;` before the semicolon. They would otherwise be moved to
+    // after the `;` since #18736 stopped including the semicolon in the
+    // statement's range.
+    const comments = getComments(node);
+    for (let i = 0; i < comments.length; i++) {
+      const comment = comments[i];
+      if (
+        comment.trailing &&
+        isBlockComment(comment) &&
+        locEndWithFullText(comment) <= statementEnd
+      ) {
+        const commentDoc = path.call(
+          () => options.printer.printComment(path, options),
+          "comments",
+          i,
+        );
+        parts.push(" ", commentDoc);
+        comment.printed = true;
+        options[Symbol.for("printedComments")]?.add(comment);
+      }
+    }
+
     parts.push(";");
   }
 

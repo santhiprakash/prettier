@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`issue-19420.js - {"bracketSpacing":false} format 1`] = `
+====================================options=====================================
+bracketSpacing: false
+parsers: ["flow"]
+                                                      printWidth: 80 (default) |
+=====================================input======================================
+module.exports = {
+  cacheStores: ({FileStore}) => {
+    return [new FileStore({root: __dirname})];
+  },
+} /*:: as InputConfigT*/;
+
+=====================================output=====================================
+module.exports = {
+  cacheStores: ({FileStore}) => {
+    return [new FileStore({root: __dirname})];
+  },
+} /*:: as InputConfigT*/;
+
+================================================================================
+`;
