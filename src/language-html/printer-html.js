@@ -59,8 +59,16 @@ function genericPrint(path, options, print) {
       return printAngularControlFlowBlock(path, options, print);
     case "angularControlFlowBlockParameters":
       return printAngularControlFlowBlockParameters(path, options, print);
-    case "angularControlFlowBlockParameter":
-      return htmlWhitespace.trim(node.expression);
+    case "angularControlFlowBlockParameter": {
+      const expression = htmlWhitespace.trim(node.expression);
+      // The embedded `__ng_directive` formatter cannot parse multi-binding
+      // `let` clauses in `@for` (e.g. `let i=$index, f=$first`). When it fails,
+      // this fallback printer is used, so normalize `=` spacing for `let`.
+      if (/^let\s/.test(expression)) {
+        return expression.replaceAll(/\s*=\s*/g, " = ");
+      }
+      return expression;
+    }
 
     case "angularLetDeclaration":
       // print like "break-after-operator" layout assignment in estree printer
