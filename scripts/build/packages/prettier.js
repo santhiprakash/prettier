@@ -87,11 +87,6 @@ const mainModule = {
           },
         },
         {
-          module: getPackageFile("json5/dist/index.mjs"),
-          find: "export default lib;",
-          replacement: "export default { parse };",
-        },
-        {
           module: resolveEsmModulePath("@babel/code-frame"),
           process(text) {
             text = text.replace(
@@ -532,11 +527,34 @@ const pluginFiles = [
   {
     input: "src/plugins/meriyah.js",
     replaceModule: [
-      // We don't use value of JSXText
       {
         module: resolveEsmModulePath("meriyah"),
-        find: "parser.tokenValue = decodeHTMLStrict(raw);",
-        replacement: "parser.tokenValue = raw;",
+        process(text) {
+          // `structuredClone` is used to clone node
+          text = outdent`
+            const structuredClone =
+              globalThis.structuredClone ??
+              ((node) => ({ ...node, range: [...node.range] }));
+
+            ${text}
+          `;
+
+          // We don't use value of JSXText
+          text = text.replace(
+            "const decodeMap = ",
+            "const decodeMap = undefined &&",
+          );
+          text = text.replace(
+            "const entities = ",
+            "const entities = undefined &&",
+          );
+          text = text.replaceAll(
+            "parser.tokenValue = decodeHTMLStrict(raw);",
+            "parser.tokenValue = raw;",
+          );
+
+          return text;
+        },
       },
     ],
   },

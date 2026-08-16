@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`snippet: #0 format[__babel_estree] 1`] = `
+"Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`? (1:15)
+> 1 | let x1 = <div>}</div>;
+    |               ^
+Cause: Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`? (1:14)"
+`;
+
 exports[`snippet: #0 format[acorn] 1`] = `
 "Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{"}"}\`? (1:15)
 > 1 | let x1 = <div>}</div>;
@@ -35,6 +42,13 @@ exports[`snippet: #0 format[flow] 1`] = `
 Cause: Unexpected token \`}\`. Did you mean \`{'}'}\`? (1:14)"
 `;
 
+exports[`snippet: #0 format[meriyah] 1`] = `
+"Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`? (1:15)
+> 1 | let x1 = <div>}</div>;
+    |               ^
+Cause: [1:14-1:14]: Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`?"
+`;
+
 exports[`snippet: #0 format[oxc] 1`] = `
 "Unexpected token. Did you mean \`{'}'}\` or \`&rbrace;\`? (1:15)
 > 1 | let x1 = <div>}</div>;
@@ -52,6 +66,25 @@ exports[`snippet: #0 format[typescript] 1`] = `
 > 1 | let x1 = <div>}</div>;
     |               ^
 Cause: Unexpected token. Did you mean \`{'}'}\` or \`&rbrace;\`?"
+`;
+
+exports[`snippet: #0 format[yuku] 1`] = `
+"Unexpected '}' in JSX text (1:15)
+> 1 | let x1 = <div>}</div>;
+    |               ^"
+`;
+
+exports[`snippet: #0 format[yuku-ts] 1`] = `
+"Unexpected '}' in JSX text (1:15)
+> 1 | let x1 = <div>}</div>;
+    |               ^"
+`;
+
+exports[`snippet: #1 format[__babel_estree] 1`] = `
+"Unexpected token \`>\`. Did you mean \`&gt;\` or \`{'>'}\`? (1:15)
+> 1 | let x2 = <div>></div>;
+    |               ^
+Cause: Unexpected token \`>\`. Did you mean \`&gt;\` or \`{'>'}\`? (1:14)"
 `;
 
 exports[`snippet: #1 format[acorn] 1`] = `
@@ -89,6 +122,13 @@ exports[`snippet: #1 format[flow] 1`] = `
 Cause: Unexpected token \`>\`. Did you mean \`{'>'}\`? (1:14)"
 `;
 
+exports[`snippet: #1 format[meriyah] 1`] = `
+"Unexpected token: '>>' (1:14)
+> 1 | let x2 = <div>></div>;
+    |              ^^
+Cause: [1:13-1:15]: Unexpected token: '>>'"
+`;
+
 exports[`snippet: #1 format[oxc] 1`] = `
 "Unexpected token. Did you mean \`{'>'}\` or \`&gt;\`? (1:15)
 > 1 | let x2 = <div>></div>;
@@ -106,6 +146,25 @@ exports[`snippet: #1 format[typescript] 1`] = `
 > 1 | let x2 = <div>></div>;
     |               ^
 Cause: Unexpected token. Did you mean \`{'>'}\` or \`&gt;\`?"
+`;
+
+exports[`snippet: #1 format[yuku] 1`] = `
+"Unexpected '>' in JSX text (1:15)
+> 1 | let x2 = <div>></div>;
+    |               ^"
+`;
+
+exports[`snippet: #1 format[yuku-ts] 1`] = `
+"Unexpected '>' in JSX text (1:15)
+> 1 | let x2 = <div>></div>;
+    |               ^"
+`;
+
+exports[`snippet: #2 format[__babel_estree] 1`] = `
+"Unexpected token (1:16)
+> 1 | let x2 = <div><</div>;
+    |                ^
+Cause: Unexpected token (1:15)"
 `;
 
 exports[`snippet: #2 format[acorn] 1`] = `
@@ -143,6 +202,13 @@ exports[`snippet: #2 format[flow] 1`] = `
 Cause: Unexpected token \`<\`, expected the token \`>\` (1:15)"
 `;
 
+exports[`snippet: #2 format[meriyah] 1`] = `
+"Unexpected token (1:16)
+> 1 | let x2 = <div><</div>;
+    |                ^
+Cause: [1:15-1:16]: Unexpected token"
+`;
+
 exports[`snippet: #2 format[oxc] 1`] = `
 "Unexpected token (1:16)
 > 1 | let x2 = <div><</div>;
@@ -160,6 +226,25 @@ exports[`snippet: #2 format[typescript] 1`] = `
 > 1 | let x2 = <div><</div>;
     |                ^
 Cause: Identifier expected."
+`;
+
+exports[`snippet: #2 format[yuku] 1`] = `
+"Expected '</' to close the JSX element, but found '<<' (1:15)
+> 1 | let x2 = <div><</div>;
+    |               ^^"
+`;
+
+exports[`snippet: #2 format[yuku-ts] 1`] = `
+"Expected '</' to close the JSX element, but found '<<' (1:15)
+> 1 | let x2 = <div><</div>;
+    |               ^^"
+`;
+
+exports[`snippet: #3 format[__babel_estree] 1`] = `
+"Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`? (1:22)
+> 1 | let x3 = <div>{"foo"}}</div>;
+    |                      ^
+Cause: Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`? (1:21)"
 `;
 
 exports[`snippet: #3 format[acorn] 1`] = `
@@ -197,6 +282,13 @@ exports[`snippet: #3 format[flow] 1`] = `
 Cause: Unexpected token \`}\`. Did you mean \`{'}'}\`? (1:21)"
 `;
 
+exports[`snippet: #3 format[meriyah] 1`] = `
+"Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`? (1:22)
+> 1 | let x3 = <div>{"foo"}}</div>;
+    |                      ^
+Cause: [1:21-1:21]: Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`?"
+`;
+
 exports[`snippet: #3 format[oxc] 1`] = `
 "Unexpected token. Did you mean \`{'}'}\` or \`&rbrace;\`? (1:22)
 > 1 | let x3 = <div>{"foo"}}</div>;
@@ -214,6 +306,25 @@ exports[`snippet: #3 format[typescript] 1`] = `
 > 1 | let x3 = <div>{"foo"}}</div>;
     |                     ^
 Cause: ':' expected."
+`;
+
+exports[`snippet: #3 format[yuku] 1`] = `
+"Unexpected '}' in JSX text (1:22)
+> 1 | let x3 = <div>{"foo"}}</div>;
+    |                      ^"
+`;
+
+exports[`snippet: #3 format[yuku-ts] 1`] = `
+"Shorthand property must be an identifier (1:16)
+> 1 | let x3 = <div>{"foo"}}</div>;
+    |                ^^^^^"
+`;
+
+exports[`snippet: #4 format[__babel_estree] 1`] = `
+"Unexpected token \`>\`. Did you mean \`&gt;\` or \`{'>'}\`? (1:22)
+> 1 | let x4 = <div>{"foo"}></div>;
+    |                      ^
+Cause: Unexpected token \`>\`. Did you mean \`&gt;\` or \`{'>'}\`? (1:21)"
 `;
 
 exports[`snippet: #4 format[acorn] 1`] = `
@@ -251,6 +362,13 @@ exports[`snippet: #4 format[flow] 1`] = `
 Cause: Unexpected token \`>\`. Did you mean \`{'>'}\`? (1:21)"
 `;
 
+exports[`snippet: #4 format[meriyah] 1`] = `
+"Unexpected token \`>\`. Did you mean \`&gt;\` or \`{'>'}\`? (1:22)
+> 1 | let x4 = <div>{"foo"}></div>;
+    |                      ^
+Cause: [1:21-1:21]: Unexpected token \`>\`. Did you mean \`&gt;\` or \`{'>'}\`?"
+`;
+
 exports[`snippet: #4 format[oxc] 1`] = `
 "Unexpected token. Did you mean \`{'>'}\` or \`&gt;\`? (1:22)
 > 1 | let x4 = <div>{"foo"}></div>;
@@ -268,6 +386,25 @@ exports[`snippet: #4 format[typescript] 1`] = `
 > 1 | let x4 = <div>{"foo"}></div>;
     |                     ^
 Cause: ':' expected."
+`;
+
+exports[`snippet: #4 format[yuku] 1`] = `
+"Unexpected '>' in JSX text (1:22)
+> 1 | let x4 = <div>{"foo"}></div>;
+    |                      ^"
+`;
+
+exports[`snippet: #4 format[yuku-ts] 1`] = `
+"Shorthand property must be an identifier (1:16)
+> 1 | let x4 = <div>{"foo"}></div>;
+    |                ^^^^^"
+`;
+
+exports[`snippet: #5 format[__babel_estree] 1`] = `
+"Unexpected token (1:23)
+> 1 | let x4 = <div>{"foo"}<</div>;
+    |                       ^
+Cause: Unexpected token (1:22)"
 `;
 
 exports[`snippet: #5 format[acorn] 1`] = `
@@ -305,6 +442,13 @@ exports[`snippet: #5 format[flow] 1`] = `
 Cause: Unexpected token \`<\`, expected the token \`>\` (1:22)"
 `;
 
+exports[`snippet: #5 format[meriyah] 1`] = `
+"Unexpected token (1:23)
+> 1 | let x4 = <div>{"foo"}<</div>;
+    |                       ^
+Cause: [1:22-1:23]: Unexpected token"
+`;
+
 exports[`snippet: #5 format[oxc] 1`] = `
 "Unexpected token (1:23)
 > 1 | let x4 = <div>{"foo"}<</div>;
@@ -322,6 +466,25 @@ exports[`snippet: #5 format[typescript] 1`] = `
 > 1 | let x4 = <div>{"foo"}<</div>;
     |                     ^
 Cause: ':' expected."
+`;
+
+exports[`snippet: #5 format[yuku] 1`] = `
+"Expected '</' to close the JSX element, but found '<<' (1:22)
+> 1 | let x4 = <div>{"foo"}<</div>;
+    |                      ^^"
+`;
+
+exports[`snippet: #5 format[yuku-ts] 1`] = `
+"Shorthand property must be an identifier (1:16)
+> 1 | let x4 = <div>{"foo"}<</div>;
+    |                ^^^^^"
+`;
+
+exports[`snippet: #6 format[__babel_estree] 1`] = `
+"Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`? (1:15)
+> 1 | let x5 = <div>}{"foo"}</div>;
+    |               ^
+Cause: Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`? (1:14)"
 `;
 
 exports[`snippet: #6 format[acorn] 1`] = `
@@ -359,6 +522,13 @@ exports[`snippet: #6 format[flow] 1`] = `
 Cause: Unexpected token \`}\`. Did you mean \`{'}'}\`? (1:14)"
 `;
 
+exports[`snippet: #6 format[meriyah] 1`] = `
+"Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`? (1:15)
+> 1 | let x5 = <div>}{"foo"}</div>;
+    |               ^
+Cause: [1:14-1:14]: Unexpected token \`}\`. Did you mean \`&rbrace;\` or \`{'}'}\`?"
+`;
+
 exports[`snippet: #6 format[oxc] 1`] = `
 "Unexpected token. Did you mean \`{'}'}\` or \`&rbrace;\`? (1:15)
 > 1 | let x5 = <div>}{"foo"}</div>;
@@ -376,6 +546,25 @@ exports[`snippet: #6 format[typescript] 1`] = `
 > 1 | let x5 = <div>}{"foo"}</div>;
     |               ^
 Cause: Expression expected."
+`;
+
+exports[`snippet: #6 format[yuku] 1`] = `
+"Unexpected '}' in JSX text (1:15)
+> 1 | let x5 = <div>}{"foo"}</div>;
+    |               ^"
+`;
+
+exports[`snippet: #6 format[yuku-ts] 1`] = `
+"Unexpected token '}' (1:15)
+> 1 | let x5 = <div>}{"foo"}</div>;
+    |               ^"
+`;
+
+exports[`snippet: #7 format[__babel_estree] 1`] = `
+"Unexpected token \`>\`. Did you mean \`&gt;\` or \`{'>'}\`? (1:15)
+> 1 | let x6 = <div>>{"foo"}</div>;
+    |               ^
+Cause: Unexpected token \`>\`. Did you mean \`&gt;\` or \`{'>'}\`? (1:14)"
 `;
 
 exports[`snippet: #7 format[acorn] 1`] = `
@@ -413,6 +602,13 @@ exports[`snippet: #7 format[flow] 1`] = `
 Cause: Unexpected token \`>\`. Did you mean \`{'>'}\`? (1:14)"
 `;
 
+exports[`snippet: #7 format[meriyah] 1`] = `
+"Unexpected token: '>>' (1:14)
+> 1 | let x6 = <div>>{"foo"}</div>;
+    |              ^^
+Cause: [1:13-1:15]: Unexpected token: '>>'"
+`;
+
 exports[`snippet: #7 format[oxc] 1`] = `
 "Unexpected token. Did you mean \`{'>'}\` or \`&gt;\`? (1:15)
 > 1 | let x6 = <div>>{"foo"}</div>;
@@ -430,6 +626,25 @@ exports[`snippet: #7 format[typescript] 1`] = `
 > 1 | let x6 = <div>>{"foo"}</div>;
     |               ^
 Cause: Expression expected."
+`;
+
+exports[`snippet: #7 format[yuku] 1`] = `
+"Unexpected '>' in JSX text (1:15)
+> 1 | let x6 = <div>>{"foo"}</div>;
+    |               ^"
+`;
+
+exports[`snippet: #7 format[yuku-ts] 1`] = `
+"Expected '>' to close a type assertion, but found '>>' (1:14)
+> 1 | let x6 = <div>>{"foo"}</div>;
+    |              ^^"
+`;
+
+exports[`snippet: #8 format[__babel_estree] 1`] = `
+"Unexpected token (1:16)
+> 1 | let x6 = <div><{"foo"}</div>;
+    |                ^
+Cause: Unexpected token (1:15)"
 `;
 
 exports[`snippet: #8 format[acorn] 1`] = `
@@ -467,6 +682,13 @@ exports[`snippet: #8 format[flow] 1`] = `
 Cause: Unexpected token \`{\`, expected the token \`>\` (1:15)"
 `;
 
+exports[`snippet: #8 format[meriyah] 1`] = `
+"Unexpected token (1:16)
+> 1 | let x6 = <div><{"foo"}</div>;
+    |                ^
+Cause: [1:15-1:16]: Unexpected token"
+`;
+
 exports[`snippet: #8 format[oxc] 1`] = `
 "Unexpected token (1:16)
 > 1 | let x6 = <div><{"foo"}</div>;
@@ -484,4 +706,16 @@ exports[`snippet: #8 format[typescript] 1`] = `
 > 1 | let x6 = <div><{"foo"}</div>;
     |                       ^
 Cause: '>' expected."
+`;
+
+exports[`snippet: #8 format[yuku] 1`] = `
+"Expected JSX element name, but found '{' (1:16)
+> 1 | let x6 = <div><{"foo"}</div>;
+    |                ^"
+`;
+
+exports[`snippet: #8 format[yuku-ts] 1`] = `
+"Expected '>' to close a type assertion, but found '<' (1:23)
+> 1 | let x6 = <div><{"foo"}</div>;
+    |                       ^"
 `;
